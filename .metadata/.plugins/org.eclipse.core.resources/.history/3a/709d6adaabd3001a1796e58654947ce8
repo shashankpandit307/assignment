@@ -1,0 +1,6 @@
+Feature: CreditCard Payment 
+ 
+Scenario:Credit Credit Payment successful
+Given Open the Firefox and launch the application
+Then click on BuyNow
+Then click on checkout

@@ -1,0 +1,15 @@
+package com.PaymentGateway.test;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import com.BaseClass.UItest.BaseClass;
+
+public class CreditPayment extends BaseClass
+{
+	public CreditPayment(WebDriver driver)
+	{
+		 @FindBy(how=How.XPATH, using="//*a[@title='Dresses']")
+		 WebElement menu_dresses;
+	
+	}
+}

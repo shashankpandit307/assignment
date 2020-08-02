@@ -1,0 +1,16 @@
+package com.PaymentGateway.test;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WrapsElement;
+
+import com.BaseClass.UItest.BaseClass;
+
+public class CreditPayment extends BaseClass{
+	
+   @FindBy(xpath="//a[@class='btn buy']")
+	WebElement buypillow;
+   
+   @FindBy(xpath="//div[@class='cart-checkout']")
+   WrapsElement checkout;
+
+}

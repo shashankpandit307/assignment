@@ -1,0 +1,50 @@
+package com.BaseClass.UItest;
+
+import java.io.FileInputStream;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+
+import javax.imageio.stream.FileCacheImageInputStream;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class BaseClass {
+	
+public static WebDriver driver;
+public static Properties prop;
+
+public BaseClass(){
+	try{
+		prop = new Properties();
+		FileCacheImageInputStream fis = new FileInputStream("G:\Assignment -1\com.CreditCardPayment.com\src\main\java\com\UITest\configuration\config.properties");
+		prop.load(fis);
+	}catch (IoExpection e){
+		e.getMessage();
+	}
+	 
+	}
+public static void initialization()
+{
+
+	String browserName=prop.getProperty("browser");
+	if(browserName.equals("chrome"))
+	{
+		System.setProperty("webdriver.chrome.driver", "D:\\chromedriver_win32\\chromedriver.exe");
+		driver = new ChromeDriver();
+}
+	else if(browserName.equals("firefox"))
+	{
+		System.setProperty("webdriver.gecko.driver","D:\\geckodriver-v0.26.0-win64\\geckodriver.exe");
+		
+	}
+
+	 driver.manage().window().maximize();
+	 driver.manage().deleteAllCookies();
+	 driver.manage().timeouts().pageLoadTimeout(WebdriverComp.PAGE_LOAD_TIMEOUT,TimeUnit.SECONDS);
+	 driver.manage().timeouts().implicitlyWait(WebdriverComp.IMPLICIT_WAIT,TimeUnit.SECONDS);
+	 driver.get(prop.getProperty("url"));
+}
+}
+
+

@@ -1,0 +1,7 @@
+package com.BaseClass.UItest;
+
+public class WebdriverComp {
+
+	int PAGE_LOAD_TIMEOUT =20;
+	int IMPLICIT_WAIT =30;
+}
